@@ -253,6 +253,8 @@ cask 'sourcetree'
 cask 'transmission'
 cask 'vlc'
 cask 'caffeine'
+cask 'intellij-idea'
+cask 'appcode'
 cask 'alfred'
 cask 'iterm2'
 brew 'choppsv1/term24/tmux'
@@ -286,14 +288,25 @@ git clone  git@github.com:joedaniels29/zsh_scripts.git "~/.zsh_scripts";
 for f (FiraCode-Bold.ttf FiraCode-Light.ttf FiraCode-Medium.ttf FiraCode-Regular.ttf FiraCode-Retina.ttf); do
     wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/$f -O /Library/Fonts/$f
 done
+# Preferences
+cd ~/Library/Preferences
+for f (IntelliJIdea2016.2 AppCode2016.2); do
+    git clone https://github.com/joedaniels29/$f
+done
 
 
 
 EOF
 
 
+gem install cocoapods
+gem install fastlane
+
 
 
 curl https://gist.githubusercontent.com/joedaniels29/f9fb30554649f68d2c973f8d4e98b68b/raw > .tmux.conf
+curl https://gist.github.com/4d30854664085d75d78b71b735d26647/raw > ~/Library/Keyboard\ Layouts/simple.keylayout
+curl https://gist.github.com/4d30854664085d75d78b71b735d26647/raw > ~/Library/Preferences/com.divisiblebyzero.Spectacle.plist
+wget https://www.dropbox.com/s/63gjkdrck5wiqy3/com.divisiblebyzero.Spectacle.plist?dl=1 -O ~/Library/Preferences/com.divisiblebyzero.Spectacle.plist
 
 fi
