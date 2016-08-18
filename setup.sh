@@ -273,7 +273,7 @@ brew "redis", restart_service: true
 EOF
 
 cd ~/
-echo <<-EOF
+cat <<EOF | zsh -s
 cd ~/;
 git clone --recursive https://github.com/joedaniels29/prezto.git "${ZDOTDIR:-$HOME}/.zprezto";
 setopt EXTENDED_GLOB
@@ -282,24 +282,8 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 git clone  git@github.com:joedaniels29/zsh_scripts.git "~/.zsh_scripts";
-
-
-EOF | zsh
+EOF 
 
 curl https://gist.githubusercontent.com/joedaniels29/f9fb30554649f68d2c973f8d4e98b68b/raw > .tmux.conf
 
-
-# find_latest_ruby() {
-  # rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
-# }
-
-# shellcheck disable=SC2016
-# append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
-# eval "$(rbenv init -)"
-
-# if ! rbenv versions | grep -Fq "$ruby_version"; then
-  # RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
 fi
-
-# rbenv global "$ruby_version"
-# rbenv shell "$ruby_version"
