@@ -244,7 +244,7 @@ brew "xvid"
 brew "xz"
 brew "yasm"
 brew "zsh"
-
+brew "gist"
 cask 'google-chrome'
 cask 'spectacle'
 cask 'dropbox'
@@ -286,6 +286,7 @@ git clone  git@github.com:joedaniels29/zsh_scripts.git "~/.zsh_scripts";
 
 EOF | zsh
 
+curl https://gist.githubusercontent.com/joedaniels29/f9fb30554649f68d2c973f8d4e98b68b/raw > .tmux.conf
 
 
 # find_latest_ruby() {
