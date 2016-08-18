@@ -73,8 +73,10 @@ gem_install_or_update() {
     gem install "$@"
   fi
 }
+rm -rf ~/.rvm
+curl -L https://get.rvm.io | bash -s stable --ruby --rails
+. ~/.rvm/scripts/rvm
 
-curl -sSL https://get.rvm.io | bash -s stable --ruby --rails
 gem update --system
 gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
@@ -249,6 +251,7 @@ cask 'google-drive'
 cask 'sourcetree'
 cask 'transmission'
 cask 'vlc'
+cask 'iterm2'
 brew 'caskroom/cask/brew-cask'
 brew 'choppsv1/term24/tmux'
 brew 'homebrew/science/veclibfort'
