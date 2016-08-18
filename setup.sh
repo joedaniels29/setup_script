@@ -74,7 +74,7 @@ gem_install_or_update() {
   fi
 }
 rm -rf ~/.rvm
-curl -L https://get.rvm.io | bash -s stable --ruby --rails
+curl -L https://get.rvm.io | bash -s stable --ruby --rails || true
 . ~/.rvm/scripts/rvm
 
 gem update --system
@@ -272,6 +272,7 @@ EOF
 
 fancy_echo "Configuring Ruby ..."
 cd ~/
+
 
 
 
