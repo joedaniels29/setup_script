@@ -73,9 +73,11 @@ gem_install_or_update() {
     gem install "$@"
   fi
 }
-rm -rf ~/.rvm
-curl -L https://get.rvm.io | bash -s stable --ruby --rails || true
-. ~/.rvm/scripts/rvm
+
+if [ ! -d "$HOME/.rvm/" ]; then
+    curl -L https://get.rvm.io | bash -s stable --ruby --rails || true
+    . ~/.rvm/scripts/rvm
+fi
 
 gem update --system
 gem_install_or_update 'bundler'
@@ -125,7 +127,6 @@ brew "brew-cask"
 brew "cabal-install"
 brew "cairo"
 brew "carthage"
-brew "cask"
 brew "casperjs"
 brew "checkbashisms"
 brew "clang-format"
@@ -279,6 +280,10 @@ setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
+
+git clone  git@github.com:joedaniels29/zsh_scripts.git "~/.zsh_scripts";
+
+
 EOF | zsh
 
 
