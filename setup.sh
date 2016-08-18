@@ -244,13 +244,16 @@ brew "xvid"
 brew "xz"
 brew "yasm"
 brew "zsh"
-brew "rvm"
 
 cask 'google-chrome'
+cask 'spectacle'
+cask 'dropbox'
 cask 'google-drive'
 cask 'sourcetree'
 cask 'transmission'
 cask 'vlc'
+cask 'caffeine'
+cask 'alfred'
 cask 'iterm2'
 brew 'choppsv1/term24/tmux'
 brew 'homebrew/science/veclibfort'
@@ -269,11 +272,10 @@ brew "postgres", restart_service: true
 brew "redis", restart_service: true
 EOF
 
-fancy_echo "Configuring Ruby ..."
 cd ~/
 echo <<-EOF
 cd ~/;
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto";
+git clone --recursive https://github.com/joedaniels29/prezto.git "${ZDOTDIR:-$HOME}/.zprezto";
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
