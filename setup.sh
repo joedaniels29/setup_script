@@ -299,8 +299,12 @@ done
 EOF
 
 
+curl https://install.meteor.com/ | sh
 gem install cocoapods
 gem install fastlane
+npm install -g bower
+# npm install  -g steroids
+npm install -g ember-cli
 
 
 
