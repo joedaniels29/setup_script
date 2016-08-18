@@ -71,9 +71,14 @@ gem_install_or_update() {
     gem update "$@"
   else
     gem install "$@"
-    rbenv rehash
   fi
 }
+
+curl -sSL https://get.rvm.io | bash -s stable --ruby --rails
+gem update --system
+gem_install_or_update 'bundler'
+number_of_cores=$(sysctl -n hw.ncpu)
+bundle config --global jobs $((number_of_cores - 1))
 
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew ..."
@@ -94,8 +99,11 @@ if brew list | grep -Fq brew-cask; then
 fi
 
 fancy_echo "Updating Homebrew formulae ..."
+brew tap Homebrew/bundle
 brew update
 brew bundle --file=- <<EOF
+cask_args appdir: '/Applications'
+
 tap "caskroom/cask"
 tap "choppsv1/term24"
 tap "homebrew/boneyard"
@@ -106,52 +114,175 @@ tap "homebrew/x11"
 tap "kylef/formulae"
 tap "thoughtbot/formulae"
 tap "homebrew/services"
-# Unix
-brew "ctags"
+
+brew "arpack"
+brew "autoconf"
+brew "automake"
+brew "boost"
+brew "brew-cask"
+brew "cabal-install"
+brew "cairo"
+brew "carthage"
+brew "cask"
+brew "casperjs"
+brew "checkbashisms"
+brew "clang-format"
+brew "clisp"
+brew "cmake"
+brew "coreutils"
+brew "diff-so-fancy"
+brew "doxygen"
+brew "elixir"
+brew "emacs"
+brew "epstool"
+brew "erlang"
+brew "fasd"
+brew "fdk-aac"
+brew 'ffmpeg', args: ['with-fdk-aac', 'with-ffplay', 'with-freetype', 'with-libass', 'with-libvorbis', 'with-libvpx', 'with-opus', 'with-x265']
+brew "fftw"
+brew "fontconfig"
+brew "freetype"
+brew "fribidi"
+brew "gcc"
+brew "gd"
+brew "gdbm"
+brew "gettext"
+brew "ghc"
+brew "ghostscript"
 brew "git"
-brew "openssl"
-brew "rcm"
-brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
-brew "tmux"
-brew "vim"
-brew "zsh"
-# Heroku
-brew "heroku-toolbelt"
-brew "parity"
-# GitHub
+brew "gl2ps"
+brew "glib"
+brew "glpk"
+brew "gmp"
+brew "gnu-sed"
+brew "gnupg"
+brew "gnuplot"
+brew "gobject-introspection"
+brew "gradle"
+brew "graphicsmagick"
+brew "harfbuzz"
+brew "hdf5"
 brew "hub"
-# Image manipulation
+brew "icu4c"
 brew "imagemagick"
-# Testing
-brew "qt"
-# Programming languages
-brew "libyaml" # should come after openssl
+brew "intltool"
+brew "isl"
+brew "jpeg"
+brew "jq"
+brew "lame"
+brew "libass"
+brew "libevent"
+brew "libffi"
+brew "libgpg-error"
+brew "libksba"
+brew "libmpc"
+brew "libogg"
+brew "libpng"
+brew "libsigsegv"
+brew "libtiff"
+brew "libtool"
+brew "libvorbis"
+brew "libvpx"
+brew "libyaml"
+brew "little-cms2"
+brew "llvm"
+brew "lua"
+brew "metis"
+brew "mongodb"
+brew "mp3cat"
+brew "mpfr"
+brew "nasm"
 brew "node"
-brew "rbenv"
-brew "ruby-build"
+brew "octave"
+brew "oniguruma"
+brew "open-mpi"
+brew "openssl"
+brew "optipng"
+brew "opus"
+brew "p7zip"
+brew "pcre"
+brew "phantomjs"
+brew "pixman"
+brew "pkg-config"
+brew "plotutils"
+brew "postgresql"
+brew "pstoedit"
+brew "pypy"
+brew "pyqt"
+brew "python"
+brew "python3"
+brew "qhull"
+brew "qrupdate"
+brew "qscintilla2"
+brew "qt"
+brew "readline"
+brew "reattach-to-user-namespace"
+brew "redis"
+brew "sdl"
+brew "sip"
+brew "sourcekitten"
+brew "sqlite"
+brew "suite-sparse"
+brew "swiftenv"
+brew "szip"
+brew "tbb"
+brew "texi2html"
+brew "texinfo"
+brew "tmux"
+brew "transfig"
+brew "unixodbc"
+brew "veclibfort"
+brew "watchman"
+brew "webp"
+brew "wget"
+brew "wxmac"
+brew "x264"
+brew "x265"
+brew "xvid"
+brew "xz"
+brew "yasm"
+brew "zsh"
+brew "rvm"
+
+cask 'google-chrome'
+cask 'google-drive'
+cask 'sourcetree'
+cask 'transmission'
+cask 'vlc'
+brew 'caskroom/cask/brew-cask'
+brew 'choppsv1/term24/tmux'
+brew 'homebrew/science/veclibfort'
+brew 'homebrew/science/arpack'
+brew 'homebrew/science/glpk'
+brew 'homebrew/science/hdf5'
+brew 'homebrew/science/metis'
+brew 'homebrew/science/transfig'
+brew 'homebrew/science/qhull'
+brew 'homebrew/science/qrupdate'
+brew 'homebrew/science/suite-sparse'
+brew 'homebrew/science/octave'
+brew 'kylef/formulae/swiftenv'
 # Databases
 brew "postgres", restart_service: true
 brew "redis", restart_service: true
 EOF
 
 fancy_echo "Configuring Ruby ..."
-find_latest_ruby() {
-  rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
-}
+cd ~/
 
-ruby_version="$(find_latest_ruby)"
+
+
+# find_latest_ruby() {
+  # rbenv install -l | grep -v - | tail -1 | sed -e 's/^ *//'
+# }
+
 # shellcheck disable=SC2016
-append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
-eval "$(rbenv init -)"
+# append_to_zshrc 'eval "$(rbenv init - --no-rehash)"' 1
+# eval "$(rbenv init -)"
 
-if ! rbenv versions | grep -Fq "$ruby_version"; then
-  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
+# if ! rbenv versions | grep -Fq "$ruby_version"; then
+  # RUBY_CONFIGURE_OPTS=--with-openssl-dir=/usr/local/opt/openssl rbenv install -s "$ruby_version"
 fi
 
-rbenv global "$ruby_version"
-rbenv shell "$ruby_version"
-gem update --system
-gem_install_or_update 'bundler'
-number_of_cores=$(sysctl -n hw.ncpu)
-bundle config --global jobs $((number_of_cores - 1))
+# rbenv global "$ruby_version"
+# rbenv shell "$ruby_version"
