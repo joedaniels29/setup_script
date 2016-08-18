@@ -257,6 +257,8 @@ cask 'intellij-idea'
 cask 'appcode'
 cask 'alfred'
 cask 'iterm2'
+cask 'sourcetree'
+
 brew 'choppsv1/term24/tmux'
 brew 'homebrew/science/veclibfort'
 brew 'homebrew/science/arpack'
@@ -293,7 +295,7 @@ cd ~/Library/Preferences
 for f (IntelliJIdea2016.2 AppCode2016.2); do
     git clone https://github.com/joedaniels29/$f
 done
-
+cd ~
 
 
 EOF
