@@ -62,7 +62,7 @@ case "$SHELL" in
   */zsh) : ;;
   *)
     fancy_echo "Changing your shell to zsh ..."
-      chsh -s "$(which zsh)"
+      chsh -s "$(which zsh)" || true
     ;;
 esac
 
