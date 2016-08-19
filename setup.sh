@@ -287,6 +287,7 @@ brew "redis", restart_service: true
 EOF
 
 cd ~/
+# Want to have zsh syntax
 cat <<EOF | zsh -s
 cd ~/;
 git clone --recursive https://github.com/joedaniels29/prezto.git "${ZDOTDIR:-$HOME}/.zprezto";
