@@ -252,8 +252,14 @@ cask 'google-drive'
 cask 'sourcetree'
 cask 'transmission'
 cask 'vlc'
+cask 'flux'
+cask 'atom'
+cask 'telegram'
 cask 'caffeine'
+cask 'ukelele'
 cask 'intellij-idea'
+cask 'the-unarchiver'
+cask 'slack'
 cask 'appcode'
 cask 'alfred'
 cask 'iterm2'
@@ -314,5 +320,5 @@ curl https://gist.githubusercontent.com/joedaniels29/f9fb30554649f68d2c973f8d4e9
 curl https://gist.github.com/4d30854664085d75d78b71b735d26647/raw > ~/Library/Keyboard\ Layouts/simple.keylayout
 curl https://gist.github.com/4d30854664085d75d78b71b735d26647/raw > ~/Library/Preferences/com.divisiblebyzero.Spectacle.plist
 wget https://www.dropbox.com/s/63gjkdrck5wiqy3/com.divisiblebyzero.Spectacle.plist?dl=1 -O ~/Library/Preferences/com.divisiblebyzero.Spectacle.plist
-
-fi
+wget https://gist.github.com/joedaniels29/647388ca7a36d19762614dbd454ff0e8 -O ~/Library/Application\ Support/Karabiner/private.xml
+wget https://gist.github.com/909a18f542196800eeb5145b7f3a68db -O /Users/Joe/Library/Developer/Xcode/UserData/KeyBindings/Joes.idekeybindings
