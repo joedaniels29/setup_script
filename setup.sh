@@ -297,6 +297,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 git clone  git@github.com:joedaniels29/zsh_scripts.git "~/.zsh_scripts";
+git clone  git@github.com:joedaniels29/.tmuxinator.git "~/.tmuxinator";
 
 for f (FiraCode-Bold.ttf FiraCode-Light.ttf FiraCode-Medium.ttf FiraCode-Regular.ttf FiraCode-Retina.ttf); do
     wget https://github.com/tonsky/FiraCode/raw/master/distr/ttf/$f -O /Library/Fonts/$f
