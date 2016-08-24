@@ -290,6 +290,10 @@ cd ~/
 # Want to have zsh syntax
 cat <<EOF | zsh -s
 cd ~/;
+for d (Projects/Work Projects/Mine Projects/Contract Projects/School); do
+  mkdir -p $d
+done
+
 git clone --recursive https://github.com/joedaniels29/prezto.git "${ZDOTDIR:-$HOME}/.zprezto";
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
