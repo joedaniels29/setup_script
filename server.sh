@@ -1,5 +1,7 @@
 apt-get install zsh;
-sudo adduser joe --group sudo  --shell $(which zsh)
+apt-get install git;
+
+sudo adduser joe --ingroup sudo --shell $(which zsh)
 
 sudo -u joe zsh -s << EOF
 cd ~/;
