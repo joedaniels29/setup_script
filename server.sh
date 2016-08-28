@@ -1,5 +1,5 @@
 apt-get install zsh;
-sudo adduser --group sudo joe -s$(which zsh)
+sudo adduser --group sudo joe --shell $(which zsh)
 
 sudo -u joe zsh -s << EOF
 cd ~/;
