@@ -1,7 +1,7 @@
 apt-get install zsh;
 sudo adduser --group sudo joe -s$(which zsh)
 
-sudo -u joe "zsh -s" << EOF
+sudo -u joe zsh -s << EOF
 cd ~/;
 git clone --recursive https://github.com/joedaniels29/prezto.git "${ZDOTDIR:-$HOME}/.zprezto";
 setopt EXTENDED_GLOB
