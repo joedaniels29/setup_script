@@ -1,5 +1,6 @@
-apt-get install zsh;
-apt-get install git;
+sudo apt-get update;
+sudo apt-get install zsh;
+sudo apt-get install git;
 
 sudo adduser joe --ingroup sudo --shell $(which zsh)
 
@@ -14,3 +15,10 @@ done
 git clone  git@github.com:joedaniels29/zsh_scripts.git "~/.zsh_scripts";
 
 EOF
+
+
+
+# fasd
+sudo add-apt-repository ppa:aacebedo/fasd;
+sudo apt update;
+sudo apt install fasd;
