@@ -1,12 +1,14 @@
 #!/bin/env zsh
 
-source
+source config_brews.zsh
 
 while read i; do
-  if  [[ !  -z  $param  ]]; do
+  if  [[ !  -z  $i  ]]; do
     echo "testing $i"
     brew install $i
-    brew uninstall $i
-    brew cleanup;
+    if  [[ $TESTING == "true"  ]]; do
+      brew uninstall $i
+      brew cleanup;
+    done
   fi
 done < brews
