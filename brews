@@ -1,0 +1,163 @@
+arpack
+autoconf
+automake
+boost
+cabal-install
+cairo
+carthage
+casperjs
+checkbashisms
+clang-format
+clisp
+cmake
+coreutils
+diff-so-fancy
+doxygen
+elixir
+emacs
+epstool
+erlang
+fasd
+fdk-aac
+ffmpeg --with-fdk-aac --with-ffplay --with-freetype --with-libass --with-libvorbis --with-libvpx --with-opus --with-x265
+fftw
+fontconfig
+freetype
+fribidi
+gcc
+gd
+gdbm
+gettext
+ghc
+ghostscript
+git
+gl2ps
+glib
+glpk
+gmp
+gnu-sed
+gnupg
+gnuplot
+gobject-introspection
+gradle
+graphicsmagick
+harfbuzz
+hdf5
+hub
+icu4c
+imagemagick
+intltool
+isl
+jpeg
+jq
+lame
+libass
+libevent
+libffi
+libgpg-error
+libksba
+libmpc
+libogg
+libpng
+libsigsegv
+libtiff
+libtool
+libvorbis
+libvpx
+libyaml
+little-cms2
+llvm
+lua
+metis
+mongodb
+mp3cat
+mpfr
+nasm
+node
+octave
+oniguruma
+open-mpi
+openssl
+optipng
+opus
+p7zip
+pcre
+phantomjs
+pixman
+pkg-config
+plotutils
+postgresql
+pstoedit
+pypy
+pyqt
+python
+python3
+qhull
+qrupdate
+qscintilla2
+qt
+readline
+reattach-to-user-namespace
+redis
+sdl
+sip
+sourcekitten
+sqlite
+suite-sparse
+swiftenv
+szip
+tbb
+texi2html
+texinfo
+tmux
+transfig
+unixodbc
+veclibfort
+watchman
+webp
+wget
+wxmac
+x264
+x265
+xvid
+xz
+yasm
+zsh
+gist
+cask google-chrome
+cask spectacle
+cask dropbox
+cask google-drive
+cask sourcetree
+cask transmission
+cask vlc
+cask flux
+cask atom
+cask telegram
+cask caffeine
+cask ukelele
+cask intellij-idea
+cask the-unarchiver
+cask slack
+cask appcode
+cask alfred
+cask alcatraz
+cask hipchat
+cask skitch
+cask injection
+cask iterm2
+cask sourcetree
+brew choppsv1/term24/tmux
+brew homebrew/science/veclibfort
+brew homebrew/science/arpack
+brew homebrew/science/glpk
+brew homebrew/science/hdf5
+brew homebrew/science/metis
+brew homebrew/science/transfig
+brew homebrew/science/qhull
+brew homebrew/science/qrupdate
+brew homebrew/science/suite-sparse
+brew homebrew/science/octave
+brew kylef/formulae/swiftenv
+postgres --restart-service
+redis --restart-service
