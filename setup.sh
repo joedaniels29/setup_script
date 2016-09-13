@@ -6,7 +6,7 @@ fancy_echo() {
   printf "\n$fmt\n" "$@"
 }
 
-HOMEBREW_PREFIX="/usr/local"
+# HOMEBREW_PREFIX="/usr/local"
 
 # if [ -d "$HOMEBREW_PREFIX" ]; then
 #   if ! [ -r "$HOMEBREW_PREFIX" ]; then
@@ -17,15 +17,15 @@ HOMEBREW_PREFIX="/usr/local"
 #   sudo chflags norestricted "$HOMEBREW_PREFIX"
 #   sudo chown -R "$LOGNAME:admin" "$HOMEBREW_PREFIX"
 # fi
-
-case "$SHELL" in
-  */zsh) : ;;
-  *)
-    fancy_echo "Changing your shell to zsh ..."
-      chsh -s "$(which zsh)" || true
-    ;;
-esac
-
+if [[ $TESTING != "true" ]]; then
+    case "$SHELL" in
+      */zsh) : ;;
+      *)
+        fancy_echo "Changing your shell to zsh ..."
+          chsh -s "$(which zsh)" || true
+        ;;
+    esac
+fi
 gem_install_or_update() {
   if gem list "$1" --installed > /dev/null; then
     gem update "$@"

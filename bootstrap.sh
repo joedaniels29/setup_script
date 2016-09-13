@@ -8,7 +8,7 @@ cd ~/Projects/Mine
 git clone https://github.com/joedaniels29/setup_script.git
 
 if [[ -d setup_script ]]; then
-  if [[ $TESTING == "true"]]; then
+  if [[ $TESTING == "true" ]]; then
      return 0;
    fi
   cd setup_script
