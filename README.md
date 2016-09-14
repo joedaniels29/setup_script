@@ -1,5 +1,5 @@
 #Setup Script
-![Build Status](https://travis-ci.org/joedaniels29/setup_script.svg?branch=master)](https://travis-ci.org/joedaniels29/setup_script)
+[![Build Status](https://travis-ci.org/joedaniels29/setup_script.svg?branch=master)](https://travis-ci.org/joedaniels29/setup_script)
 
 
 ## Usage

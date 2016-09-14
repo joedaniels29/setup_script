@@ -13,7 +13,7 @@ disabledServer/
 
 #CocoaPods
 Pods/
-GpeneratedDocumentation/
+GeneratedDocumentation/
 Carthage.checkout/
 /.bundle
 
@@ -25,4 +25,3 @@ iOSInjectionProject/
 /target
 /log/*.log
 /tmp
-
