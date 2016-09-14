@@ -1,5 +1,6 @@
 #!/bin/sh
-local script_location=$(pwd)/setup.sh
+
+script_location=$(pwd)
 fancy_echo() {
   local fmt="$1"; shift
   # shellcheck disable=SC2059
