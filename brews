@@ -142,6 +142,7 @@ cask slack
 cask appcode
 cask alfred
 cask alcatraz
+cask noun-project
 cask hipchat
 cask skitch
 cask injection
