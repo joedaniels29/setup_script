@@ -2,7 +2,8 @@
 
 source config_brews.zsh
 
-while read i; do
+while read i
+do
   if  [[ !  -z  $i  ]]; do
     echo "testing $i"
     brew install $i
@@ -11,4 +12,4 @@ while read i; do
       brew cleanup;
     done
   fi
-done < brews
+done < ./brews

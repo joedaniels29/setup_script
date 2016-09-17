@@ -9,11 +9,11 @@ git clone https://github.com/joedaniels29/setup_script.git
 
 if [[ -d setup_script ]]; then
   if [[ $TESTING == "true" ]]; then
-     return 0;
+     exit 0
    fi
   cd setup_script
   source setup.sh
 else
   echo "you failed. Internet connection? Github down? "
-   return 1
+   exit 1
 fi
