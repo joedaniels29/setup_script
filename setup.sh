@@ -64,5 +64,5 @@ fancy_echo "brewing! ..."
 
 cd $script_location
 
-zsh ./brews.zsh
-zsh ./user_environment.zsh
+zsh --login ./brews.zsh
+zsh --login  ./user_environment.zsh

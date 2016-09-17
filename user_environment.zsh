@@ -48,5 +48,5 @@ wget https://www.dropbox.com/s/63gjkdrck5wiqy3/com.divisiblebyzero.Spectacle.pli
 
 mkdir -p ~/Library/Application\ Support/Karabiner/
 wget https://gist.github.com/joedaniels29/647388ca7a36d19762614dbd454ff0e8/raw -O ~/Library/Application\ Support/Karabiner/private.xml
-mkdir -p /Users/Joe/Library/Developer/Xcode/UserData/KeyBindings/
-wget https://gist.github.com/joedaniels29/909a18f542196800eeb5145b7f3a68db/raw -O /Users/Joe/Library/Developer/Xcode/UserData/KeyBindings/Joes.idekeybindings
+mkdir -p ~/Library/Developer/Xcode/UserData/KeyBindings/
+wget https://gist.github.com/joedaniels29/909a18f542196800eeb5145b7f3a68db/raw -O ~/Library/Developer/Xcode/UserData/KeyBindings/Joes.idekeybindings
