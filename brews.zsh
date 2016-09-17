@@ -1,6 +1,6 @@
 #!/bin/env zsh
 
-source config_brews.zsh
+source config_brew.zsh
 
 while read i
 do
