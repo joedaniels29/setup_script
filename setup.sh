@@ -40,7 +40,7 @@ if [ ! -d "$HOME/.rvm/" ]; then
     . ~/.rvm/scripts/rvm
 fi
 
-gem update --system
+gem update --system > /dev/null
 gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
