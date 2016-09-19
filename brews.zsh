@@ -9,7 +9,7 @@ do
     brew install $i
     if  [[ $TESTING == "true"  ]]; then
       brew uninstall $i
-      brew cleanup
+      brew cleanup > /dev/null
       fi
   fi
 done < ./brews

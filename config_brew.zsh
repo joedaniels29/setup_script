@@ -7,3 +7,4 @@ do
 done < ./taps
 brew update;
 brew update;
+brew upgrade > /dev/null;
