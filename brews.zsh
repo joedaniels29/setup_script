@@ -4,14 +4,12 @@ source config_brew.zsh
 
 while read i
 do
-  if  [[ !  -z  $i  ]]
-  do
+  if  [[ !  -z  $i ]]; then
     echo "testing $i"
     brew install $i
-    if  [[ $TESTING == "true"  ]]
-    do
+    if  [[ $TESTING == "true"  ]]; then
       brew uninstall $i
       brew cleanup
-    done
+      fi
   fi
 done < ./brews
