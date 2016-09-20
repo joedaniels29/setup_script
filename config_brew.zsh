@@ -1,5 +1,9 @@
 #!/bin/env zsh
 
+
+
+
+
 while read i
 do
   echo "taping  $i";
@@ -7,4 +11,5 @@ do
 done < ./taps
 brew update;
 brew update;
-brew upgrade > /dev/null;
+brew upgrade --all > /dev/null;
+brew cleanup > /dev/null
