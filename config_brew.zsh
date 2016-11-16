@@ -10,6 +10,5 @@ do
   brew tap $i;
 done < ./taps
 brew update;
-brew update;
 brew upgrade --all > /dev/null;
 brew cleanup > /dev/null

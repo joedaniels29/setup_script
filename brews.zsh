@@ -23,10 +23,11 @@ if ! is_function concblock; then
     }
 fi
 do_brew(){
-    brew $1 $3
+    local installit=$1
+    local uninstallit=$2
+    brew ${(z)installit} $3
     if  [[ $TESTING == "true"  ]]; then
-      brew $2 $3
-
+      brew ${(z)uninstallit} $3
       fi
 }
 
