@@ -7,7 +7,7 @@ if ! is_function concblock; then
     zmodload zsh/zselect
 
     function concblock () {
-        CONC_MAX=${CONC_MAX:-2}
+        CONC_MAX=${CONC_MAX:-4}
 
         # Block until there is an open slot
         if [[ ${#jobstates} -ge $CONC_MAX ]]; then
@@ -22,10 +22,10 @@ if ! is_function concblock; then
         return 0
     }
 fi
-do_install(){
-    brew install $i
+do_brew(){
+    brew $1 $3
     if  [[ $TESTING == "true"  ]]; then
-      brew uninstall $i
+      brew $2 $3
 
       fi
 }
@@ -35,7 +35,16 @@ while read i
 do
   if  [[ !  -z  $i ]]; then
     echo "testing $i"
-    do_install $i &
+    do_brew "install" "uninstall" $i &
     concblock
   fi
 done < ./brews
+
+while read i
+do
+  if  [[ !  -z  $i ]]; then
+    echo "testing $i"
+    do_brew "cask install" "cask uninstall --force " $i &
+    concblock
+  fi
+done < ./cask

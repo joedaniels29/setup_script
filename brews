@@ -124,30 +124,6 @@ xz
 yasm
 zsh
 gist
-cask google-chrome
-cask spectacle
-cask dropbox
-cask google-drive
-cask sourcetree
-cask transmission
-cask vlc
-cask flux
-cask atom
-cask telegram
-cask caffeine
-cask ukelele
-cask intellij-idea
-cask the-unarchiver
-cask slack
-cask appcode
-cask alfred
-cask alcatraz
-cask noun-project
-cask hipchat
-cask skitch
-cask injection
-cask iterm2
-cask sourcetree
 brew choppsv1/term24/tmux
 brew homebrew/science/veclibfort
 brew homebrew/science/arpack
