@@ -7,7 +7,7 @@ if ! is_function concblock; then
     zmodload zsh/zselect
 
     function concblock () {
-        CONC_MAX=${CONC_MAX:-4}
+        CONC_MAX=${CONC_MAX:-2}
 
         # Block until there is an open slot
         if [[ ${#jobstates} -ge $CONC_MAX ]]; then
@@ -28,24 +28,24 @@ do_brew(){
     brew ${(z)installit} $3
     if  [[ $TESTING == "true"  ]]; then
       brew ${(z)uninstallit} $3
-      fi
+    fi
 }
 
+do_install_brew_set(){
+    while read i
+    do
+      if  [[ !  -z  $i ]]; then
+        echo "testing $i"
+        do_brew "$CASK_CMD_PCH install" "$CASK_CMD_PCH uninstall --force" $i &
+        concblock
+      fi
+    done < ./$BREW_SET
+}
 
-while read i
-do
-  if  [[ !  -z  $i ]]; then
-    echo "testing $i"
-    do_brew "install" "uninstall" $i &
-    concblock
-  fi
-done < ./brews
-
-while read i
-do
-  if  [[ !  -z  $i ]]; then
-    echo "testing $i"
-    do_brew "cask install" "cask uninstall --force " $i &
-    concblock
-  fi
-done < ./cask
+if  [[ -z $TESTING ]]; then
+  do_install_brew_set brew_set_1
+  do_install_brew_set brew_set_2
+  CASK_CMD_PCH=cask do_instalsl_brew_set cask
+else
+  do_install_brew_set $BREW_SET
+fi
