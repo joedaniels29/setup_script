@@ -1,6 +1,7 @@
 
 language: objective-c
-os: osx
+os:
+    - osx
 sudo: required
 
 osx_image:
