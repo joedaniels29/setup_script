@@ -1,18 +1,18 @@
 
 language: objective-c
 os:
-    - osx
+  - osx
 sudo: required
 
 osx_image:
-- xcode8
-- xcode7.0
-- xcode8.1
+  - xcode8
+  - xcode7.0
+  - xcode8.1
 env:
-- BREW_SET=brew_set_1
-- BREW_SET=brew_set_2
-- BREW_SET=brew_set_3
-- BREW_SET=cask CASK_CMD_PCH=cask
+  - BREW_SET=brew_set_1
+  - BREW_SET=brew_set_2
+  - BREW_SET=brew_set_3
+  - BREW_SET=cask CASK_CMD_PCH=cask
 
 script:
   - TESTING=true ./bootstrap.sh
