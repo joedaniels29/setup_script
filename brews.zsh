@@ -1,6 +1,7 @@
 #!/bin/env zsh
 
 source config_brew.zsh
+if  [[ -n $TESTING ]]; then
 if ! is_function concblock; then
     export CONC_MAX=${CONC_MAX:-2}
     zmodload zsh/parameter
@@ -22,6 +23,7 @@ if ! is_function concblock; then
         return 0
     }
 fi
+fi
 do_brew(){
     local installit=$1
     local uninstallit=$2
@@ -37,13 +39,12 @@ do_install_brew_set(){
       if  [[ !  -z  $i ]]; then
         echo "testing $i"
         do_brew "$CASK_CMD_PCH install" "$CASK_CMD_PCH uninstall --force" $i &
-        concblock
+        if  [[ -n $TESTING ]]; then concblock; fi
       fi
     done < ./$BREW_SET
 }
 
 if  [[ -z $TESTING ]]; then
-
   do_install_brew_set brews_set_1
   do_install_brew_set brews_set_2
   do_install_brew_set brews_set_3
