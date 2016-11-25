@@ -41,7 +41,7 @@ do_install_brew_set(){
         do_brew "$CASK_CMD_PCH install" "$CASK_CMD_PCH uninstall --force" $i &
         if  [[ -n $TESTING ]]; then concblock; fi
       fi
-    done < ./$BREW_SET
+  done < ./$1
 }
 
 if  [[ -z $TESTING ]]; then
