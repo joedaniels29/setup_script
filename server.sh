@@ -22,3 +22,12 @@ EOF
 sudo add-apt-repository ppa:aacebedo/fasd;
 sudo apt update;
 sudo apt install fasd;
+
+
+
+#where does this stuff go?
+
+sudo dpkg-reconfigure tzdata
+# Install ntp
+sudo apt-get update
+sudo apt-get install ntp
