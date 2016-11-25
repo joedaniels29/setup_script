@@ -43,9 +43,11 @@ do_install_brew_set(){
 }
 
 if  [[ -z $TESTING ]]; then
-  do_install_brew_set brew_set_1
-  do_install_brew_set brew_set_2
-  CASK_CMD_PCH=cask do_instalsl_brew_set cask
+
+  do_install_brew_set brews_set_1
+  do_install_brew_set brews_set_2
+  do_install_brew_set brews_set_3
+  CASK_CMD_PCH=cask do_install_brew_set cask
 else
   do_install_brew_set $BREW_SET
 fi

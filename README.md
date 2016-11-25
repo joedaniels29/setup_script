@@ -29,8 +29,8 @@ Download, review, then execute the script:
 
 ```sh
 curl --remote-name https://raw.githubusercontent.com/joedaniels29/setup_script/master/bootstrap.sh
-less mac
-sh mac 2>&1 | tee ~/laptop.log
+less bootstrap.sh
+sh bootstrap.sh 2>&1 | tee ~/bootstrap.log
 ```
 
 ## Debugging
