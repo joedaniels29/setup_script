@@ -1,4 +1,4 @@
-#!/bin/env zsh
+#!/usr/bin/env zsh
 
 source config_brew.zsh
 if  [[ -n $TESTING ]]; then
