@@ -23,6 +23,10 @@ EOF
 sudo add-apt-repository ppa:aacebedo/fasd;
 sudo apt update;
 sudo apt install fasd;
+#powerline
+brew install python
+pip install --upgrade pip
+pip install --user powerline-status
 
 
 

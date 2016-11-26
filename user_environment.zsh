@@ -1,4 +1,4 @@
-#!/bin/env zsh
+#!/usr/bin/env zsh
 
 rvm use default
 brew install wget
@@ -28,7 +28,9 @@ cd ~
 
 #should this be another script?
 rvm use default
-curl https://install.meteor.com/ | sh
+
+# I really dont like the idea of these `| sh` commands...
+# curl https://install.meteor.com/ | sh
 
 gem install cocoapods
 gem install fastlane
@@ -36,6 +38,11 @@ npm install -g bower
 # npm install  -g steroids
 npm install -g ember-cli
 
+#powerline
+brew install python
+pip install --upgrade pip
+pip install --user powerline-status
+pip install psutil
 
 
 curl https://gist.githubusercontent.com/joedaniels29/f9fb30554649f68d2c973f8d4e98b68b/raw > ~/.tmux.conf
