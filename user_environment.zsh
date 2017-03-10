@@ -57,3 +57,6 @@ mkdir -p ~/Library/Application\ Support/Karabiner/
 wget https://gist.github.com/joedaniels29/647388ca7a36d19762614dbd454ff0e8/raw -O ~/Library/Application\ Support/Karabiner/private.xml
 mkdir -p ~/Library/Developer/Xcode/UserData/KeyBindings/
 wget https://gist.github.com/joedaniels29/909a18f542196800eeb5145b7f3a68db/raw -O ~/Library/Developer/Xcode/UserData/KeyBindings/Joes.idekeybindings
+
+git config --global user.email "joedaniels29@me.com"
+git config --global user.name "Joseph Daniels"
